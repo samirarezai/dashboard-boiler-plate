@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {ThemeProvider} from '@material-ui/core/styles';
-import theme from '../theme/theme';
+import theme from 'theme/theme';
 import PublicSidebar from "./publicSidebar";
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
@@ -22,6 +22,8 @@ import PrimarySearchAppBar from "./publicMenu";
 import HomeIcon from "@material-ui/icons/Home";
 import {useDispatch, useSelector} from "react-redux";
 import {handleMenu} from "redux/pages/action";
+import ThemPro from "publicComponent/themPro";
+import {Redirect} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -111,6 +113,7 @@ export default function MiniDrawer(props) {
     const {menuKey: open} = useSelector(state =>state.handleMenuReducer)
 
     const {children, breadCrumbName} = props;
+
     const setOpen = () => {
         dispatch(handleMenu())
     }
@@ -123,7 +126,7 @@ export default function MiniDrawer(props) {
     };
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemPro>
             <div className={classes.root}>
                 <CssBaseline/>
                 <AppBar
@@ -205,6 +208,6 @@ export default function MiniDrawer(props) {
 
                 </main>
             </div>
-        </ThemeProvider>
+        </ThemPro>
     );
 }

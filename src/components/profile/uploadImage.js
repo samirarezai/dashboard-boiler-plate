@@ -13,14 +13,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UploadImage = (props) => {
-    const {titlePhoto} =props;
+    const {titlePhoto,imageStyle,preImage} =props;
     const classes = useStyles();
     return (
 
             <div className="col-12 col-xl-6 mb-5 mb-md-4">
                 <div className="d-flex align-items-center justify-flex-start flex-column flex-md-row align-items-md-end">
-                    <Avatar className={classes.avatar} variant="rounded" children="" alt="Remy Sharp"
-                            src="/static/images/avatar/1.jpg"/>
+                    {/*<Avatar className={classes.avatar} variant="rounded" children="" alt="Remy Sharp"*/}
+                    {/*        src="/static/images/avatar/1.jpg"/>*/}
+                    <img src={preImage} alt="images" style={imageStyle}/>
                     <Button variant="outlined" color="primary" className="mx-md-3 mt-3">
                         {titlePhoto}
                     </Button>

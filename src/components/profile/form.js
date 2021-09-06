@@ -5,7 +5,10 @@ import InputSize from "publicComponent/inputSize";
 import UploadImage from "components/profile/uploadImage";
 import {makeStyles} from "@material-ui/styles";
 import SignupSchema from "components/profile/validateForm";
-const useStyles = makeStyles((theme) => ({
+import theme from 'theme/theme';
+import profilePhoto from "images/icon/profile photo.svg"
+import IdCartPhoto from "images/icon/idCart.svg"
+const useStyles = makeStyles(() => ({
     formControl: {
         // margin: theme.spacing(1),
         minWidth: 120,
@@ -19,9 +22,9 @@ const Form = () => {
     const classes = useStyles();
     return (
         <div className="mt-4">
-            <div className="row">
-            <UploadImage titlePhoto="upload photo"/>
-            <UploadImage titlePhoto="upload id cart"/>
+            <div className="row align-items-end">
+            <UploadImage titlePhoto="upload photo" imageStyle={{maxWidth:'70px'}} preImage={profilePhoto}/>
+            <UploadImage titlePhoto="upload photo" imageStyle={{maxWidth:'150px'}} preImage={IdCartPhoto}/>
             </div>
             <Formik
                 initialValues={{}}

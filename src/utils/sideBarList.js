@@ -16,4 +16,5 @@ export default [
             { path: "/paliz", name: "Paliz", loginRequired: false,IconNav:GroupIc},
         ]
     },
+    { path: "/shiping-company", name: "Shiping Company", loginRequired: false,IconNav:AccountCircleIc,children:null},
 ]
